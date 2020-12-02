@@ -10,7 +10,19 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
+    <div class="container-fluid myclass">
+       
+        <%= render 'layouts/navbar' %>
+      
+      <div class="row full">
+        <div class="col-2 sidebar bg-dark">
+          <% if user_signed_in? %>
+            <%= render 'layouts/sidebar' %>
+          <% end %>
+        </div>
+        <div class="col-10 content">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

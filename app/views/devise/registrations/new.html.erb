@@ -1,0 +1,37 @@
+<h2>Регистрация</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :full_name, "Полное имя" %><br />
+    <%= f.text_field :full_name, autofocus: true, autocomplete: "Полное Имя" %>
+  </div>
+  <div class="field">
+    <%= f.label :organisation %><br />
+    <%= select(:user, :organisation, ['Опытный Завод "УралНИИстром"', 'ООО ТехсервисВермикулит', 'ООО Стройвермикулит']) %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "Электронная почта" %><br />
+    <%= f.email_field :email, autocomplete: "Электронная почта" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "Пароль" %>
+    <% if @minimum_password_length %>
+    <em>(минимум символов <%= @minimum_password_length %>)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Подтверждение пароля" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Зарегистрироваться" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

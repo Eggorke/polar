@@ -32,6 +32,7 @@ body{
   height: 92vh;
   width: 100%;
   margin-left: 0px !important;
+  box-shadow: 0 5px 0px rgba(0,0,0,0.2);
 }
 
 .sidebar{
@@ -67,7 +68,7 @@ body{
   margin-left: auto;
   margin-right: auto;
   margin-top: 4vh;
-
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background-color: rgba(238, 233, 233, 0.911);
   vertical-align: middle;
 }
@@ -79,5 +80,5 @@ body{
     -moz-text-align-last: center;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }

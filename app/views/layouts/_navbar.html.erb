@@ -4,17 +4,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">О компании</a>
+          <%= link_to "О компании", about_path, :class => "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Контакты</a>
+          <%= link_to "Контакты", contacts_path, :class => "nav-link" %>
         </li>
       </ul>
       <ul class="navbar-nav ml auto">
         <% unless user_signed_in? %>
           <li class="nav-item"><%= link_to 'Регистрация', new_user_registration_path, :class => "nav-link" %></li>
         <% else %>
-          <li class="nav-item"><%= link_to "#{current_user.full_name} / #{current_user.organisation} / #{current_user.email}", edit_user_registration_path, :class => "nav-link" %></li>
+          <li class="nav-item"><%= link_to "#{current_user.full_name} / #{current_user.organisation}", edit_user_registration_path, :class => "nav-link" %></li>
           <li class="nav-item"><%= link_to 'Выйти', destroy_user_session_path,:method => :delete, :class => "nav-link" %></li>
         <% end %>
       </ul>

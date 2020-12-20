@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Center</title>
+    <title>CRZ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,11 +15,13 @@
         <%= render 'layouts/navbar' %>
 
       <div class="row full">
+      <% if user_signed_in? %>
         <div class="col-2 sidebar bg-dark">
-          <% if user_signed_in? %>
+
             <%= render 'layouts/sidebar' %>
-          <% end %>
+
         </div>
+      <% end %>
         <div class="col content">
           <div class="inner">
             <%= yield %>

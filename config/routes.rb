@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'base#index'
   get 'contacts', to: 'base#contacts', as: 'contacts'
   get 'about', to: 'base#about', as: 'about'
+  resources :orders
+  resources :users
 end

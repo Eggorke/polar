@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'about', to: 'base#about', as: 'about'
   resources :orders
   resources :users
+  resources :organisations
 end

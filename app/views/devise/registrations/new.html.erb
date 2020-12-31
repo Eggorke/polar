@@ -10,7 +10,7 @@
     </div>
     <div class="field form-group">
       <%= f.label :organisation, "Организация" %><br />
-      <%= select(:user, :organisation, ['Садик 1', 'Садик 2', 'Садик 3', 'Садик 4', 'Садик 5'], {} ,{ class: 'form-control' }) %>
+      <%= collection_select(:user, :organisation_id, Organisation.all, :id, :name, {} ,{ class: 'form-control' }) %>
     </div>
     <div class="field form-group">
       <%= f.label :email, "Электронная почта" %><br />

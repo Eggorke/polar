@@ -1,0 +1,21 @@
+<h2>Организация</h2>
+
+<%= link_to  "create", new_organisation_path, class: "btn btn-secondary" %>
+
+<div class="container w-100">
+  <div class="row mt-2 mb-2">
+    <div class="col">Название</div>
+    <div class="col">Руководитель</div>
+    <div class="col">Телефон</div>
+    <div class="col">Примечание</div>
+  </div>
+
+  <% @organisations.each do |o| %>
+  <div class="row mt-2">
+    <div class="col"><%= o.name %></div>
+    <div class="col"><%= o.director %></div>
+    <div class="col"><%= o.phone %></div>
+    <div class="col"><%= o.note %></div>
+  </div>
+  <% end %>
+</div>

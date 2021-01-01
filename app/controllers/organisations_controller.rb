@@ -7,12 +7,35 @@ class OrganisationsController < ApplicationController
     @organisation = Organisation.new()
   end
 
+  def show
+    @organisation = Organisation.find_by(id: params[:id])
+  end
+
   def create
-    #@organisation = Organisation.new(organisation_params)
     if Organisation.create(organisation_params)
       redirect_to organisations_path
     end
   end
+
+  def edit
+    @organisation = Organisation.find_by(id: params[:id])
+  end
+
+  def destroy
+    @organisation = Organisation.find_by(id: params[:id])
+    if @organisation.delete
+      redirect_to organisations_path
+    end
+  end
+
+  def update
+    @organisation = Organisation.find_by(id: params[:id])
+    if @organisation.update(organisation_params)
+      redirect_to organisations_path
+    end
+  end
+
+
 end
 
 

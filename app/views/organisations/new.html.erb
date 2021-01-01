@@ -1,10 +1,10 @@
-<h2>Creating organisation </h2>
+<h2>Создать организацию </h2>
 <div class="container w-100">
   <%= form_for @organisation do |f| %>
-    <div class="row form-group"><%= f.text_field :name, placeholder: 'NAME', required: true, class: 'form-control' %></div>
-    <div class="row form-group"><%= f.phone_field :phone, placeholder: 'PHONE', required: true, class: 'form-control' %></div>
-    <div class="row form-group"><%= f.text_field :director, placeholder: 'DIRECTOR', required: true, class: 'form-control' %></div>
-    <div class="row form-group"><%= f.text_field :note, placeholder: 'NOTE', class: 'form-control' %></div>
-    <div class="row form-group"><%= f.submit 'CREATE' %></div>
+    <div class="row form-group mt-2"><%= f.text_field :name, placeholder: 'НАЗВАНИЕ', required: true, class: 'form-control' %></div>
+    <div class="row form-group mt-2"><%= f.phone_field :phone, placeholder: 'ТЕЛЕФОН', required: true, class: 'form-control' %></div>
+    <div class="row form-group mt-2"><%= f.text_field :director, placeholder: 'РУКОВОДИТЕЛЬ', required: true, class: 'form-control' %></div>
+    <div class="row form-group mt-2"><%= f.text_field :note, placeholder: 'ПРИМЕЧАНИЕ', class: 'form-control' %></div>
+    <div class="row actions center mt-2"><%= f.submit 'Создать', class: 'btn btn-secondary form-control' %></div>
   <% end %>
 </div>

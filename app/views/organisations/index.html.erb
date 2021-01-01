@@ -1,6 +1,6 @@
-<h2>Организация</h2>
+<h2>Организации</h2>
 
-<%= link_to  "create", new_organisation_path, class: "btn btn-secondary" %>
+<%= link_to  "Cоздать организацию", new_organisation_path, class: "btn btn-success" %>
 
 <div class="container w-100">
   <div class="row mt-2 mb-2">
@@ -12,7 +12,7 @@
 
   <% @organisations.each do |o| %>
   <div class="row mt-2">
-    <div class="col"><%= o.name %></div>
+    <div class="col"><%= link_to o.name, o %></div>
     <div class="col"><%= o.director %></div>
     <div class="col"><%= o.phone %></div>
     <div class="col"><%= o.note %></div>

@@ -1,0 +1,10 @@
+<h2>Редактировать организацию</h2>
+<div class="container w-100">
+  <%= form_for @organisation do |f| %>
+    <div class="row form-group mt-2"><%= f.text_field :name, value: @organisation.name, required: true, class: 'form-control' %></div>
+    <div class="row form-group mt-2"><%= f.phone_field :phone, value: @organisation.phone, required: true, class: 'form-control' %></div>
+    <div class="row form-group mt-2"><%= f.text_field :director, value: @organisation.director, required: true, class: 'form-control' %></div>
+    <div class="row form-group mt-2"><%= f.text_field :note, value: @organisation.note, class: 'form-control' %></div>
+    <div class="row actions center mt-2"><%= f.submit 'Применить', method: :put ,class: 'btn btn-secondary form-control' %></div>
+  <% end %>
+</div>

@@ -14,6 +14,12 @@
 
         <%= render 'layouts/navbar' %>
 
+        <% flash.each do |type, msg| %>
+         <div class="alert alert-info">
+           <%= msg %>
+         </div>
+        <% end %>
+
       <div class="row full">
       <% if user_signed_in? %>
         <div class="col-2 sidebar bg-dark">

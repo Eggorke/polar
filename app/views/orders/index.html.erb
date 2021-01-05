@@ -1,1 +1,23 @@
 <h2>Заявки</h2>
+
+<%= link_to 'Новая заявка', new_order_path, class: 'btn btn-secondary' %>
+
+<div class="container w-100">
+
+<div class="row mt-2">
+  <div class="col">Номер заявки</div>
+  <div class="col">Руководитель</div>
+  <div class="col">Организация</div>
+  <div class="col">Примечание</div>
+</div>
+
+<% @orders.each do |o| %>
+  <div class="row mt-3">
+    <div class="col"><%= link_to o.id, o %></div>
+    <div class="col"><%= o.user.full_name %></div>
+    <div class="col"><%= o.user.organisation.name %></div>
+    <div class="col"><%= o.note %></div>
+  </div>
+<% end %>
+
+</div>

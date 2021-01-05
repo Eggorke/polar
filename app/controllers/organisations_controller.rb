@@ -1,4 +1,6 @@
 class OrganisationsController < ApplicationController
+  before_action :redirect_if_not_logged_in
+
   def index
     @organisations = Organisation.all
   end
@@ -13,6 +15,7 @@ class OrganisationsController < ApplicationController
 
   def create
     if Organisation.create(organisation_params)
+      flash[:notice] = 'Организация создана'
       redirect_to organisations_path
     end
   end
@@ -24,6 +27,7 @@ class OrganisationsController < ApplicationController
   def destroy
     @organisation = Organisation.find_by(id: params[:id])
     if @organisation.delete
+      flash[:danger] = 'Организация удалена'
       redirect_to organisations_path
     end
   end
@@ -31,6 +35,7 @@ class OrganisationsController < ApplicationController
   def update
     @organisation = Organisation.find_by(id: params[:id])
     if @organisation.update(organisation_params)
+      flash[:notice] = 'Организация обновлена'
       redirect_to organisations_path
     end
   end

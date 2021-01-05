@@ -1,0 +1,33 @@
+<h2>Создать заявку</h2>
+
+<%= form_for @order do |o|  %>
+  <div class="container">
+    <%= o.hidden_field :user_id, value: current_user.id %>
+    <%= o.hidden_field :client_organisation, value: current_user.organisation.name %>
+
+    <div class="row">
+      <div class="col-3">Место</div>
+      <div class="col-3">Объект</div>
+      <div class="col-4">Проблема</div>
+      <div class="col-2">Срок</div>
+    </div>
+
+    <%= fields_for 'order_items' do |some| %>
+      <% 5.times do |c| %>
+      <div class="row mt-3">
+        <%= some.fields_for "order_item#{c}", @order_items do |ot| %>
+
+          <div class="col-3 pl-2 pr-1"><%= ot.text_field :place, class: 'form-control new-order' %></div>
+          <div class="col-3 pl-1 pr-1"><%= ot.text_field :issue_object, class: 'form-control new-order'  %></div>
+          <div class="col-4 pl-1 pr-1"><%= ot.text_field :issue, class: 'form-control new-order' %></div>
+          <div class="col-2 pl-1 pr-2"><%= ot.date_field :need_to, min: Date.today, class: 'form-control new-order' %></div>
+
+        <% end %>
+      </div>
+      <% end %>
+    <% end %>
+
+    <%= o.text_area :note, placeholder: 'Примечание', class: 'mt-3 form-control new-order width-75' %>
+    <%= o.submit 'Создать', class: 'mt-3 btn btn-secondary' %>
+  </div>
+<% end %>

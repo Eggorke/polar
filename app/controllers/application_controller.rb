@@ -12,4 +12,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :organisation_id])
   end
 
+  private
+
+  def redirect_if_not_logged_in
+    unless user_signed_in?
+      flash[:alert] = 'Залогинься сперва'
+      redirect_to root_path
+    end
+  end
+
 end

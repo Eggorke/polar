@@ -6,5 +6,6 @@ class User < ApplicationRecord
   validates :full_name, presence: true
 
   has_many :orders
+  has_many :order_items
   belongs_to :organisation
 end

@@ -84,3 +84,38 @@ body{
   margin-right: auto;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
+
+.hide{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 5s, opacity 5s linear;
+}
+
+.alert{
+  position: absolute;
+  text-align: center;
+  vertical-align: center;
+  top: 0;
+  left: 40vw;
+  width: 20vw;
+  height: 4vw;
+  z-index: 1;
+  background-color: rgba(183, 241, 243, 0.911);
+}
+
+.new-order{
+  border: none;
+  text-align: center;
+  text-align-last: center;
+  -moz-text-align-last: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+  vertical-align: center;
+
+  height: 32px;
+  min-width: 100%;
+}
+
+.width-75{
+  min-width: 75%;
+}

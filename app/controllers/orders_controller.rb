@@ -16,8 +16,8 @@ class OrdersController < ApplicationController
 
   def update
     @order = Order.find_by(id: params[:id])
-    if @order.update(order_update_params)
-      order_items_params = params[:order_items]
+    @order.update(order_update_params)
+    order_items_params = params[:order_items]
       order_items_params.each do |key, value|
         order_item = OrderItem.find_by(id: value[:id])
         if order_item
@@ -40,9 +40,9 @@ class OrdersController < ApplicationController
           end
         end
       end
-      flash[:notice] = 'Order was updated'
-      redirect_to @order
-    end
+    flash[:notice] = 'Order was updated'
+    redirect_to @order
+
   end
 
   def new
